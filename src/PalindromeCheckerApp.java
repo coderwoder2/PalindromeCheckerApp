@@ -10,18 +10,17 @@ public class PalindromeCheckerApp{
         System.out.print("input text: ");
         String word = input.nextLine();
 
-        boolean isPalindrome = true;
-        for (int i = 0; i < word.length() / 2; i++) {
-
-            if (word.charAt(i) != word.charAt(word.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+       String reversed = "";
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed = reversed + word.charAt(i);
         }
 
 
-        System.out.println("Is it a Palindrome? " + isPalindrome);
-
+        if (word.equals(reversed)) {
+            System.out.println("is it a palindrome? true");
+        } else {
+            System.out.println("is it a palindrome? false");
+        }
     }
 }
 
