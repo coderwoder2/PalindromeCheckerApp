@@ -6,24 +6,21 @@ public class PalindromeCheckerApp{
         System.out.println("Welcome to the palindrome checker management system");
         System.out.println("Version : 1.0");
         System.out.println("System intialized successfully.");
+        System.out.println();
         System.out.print("input text: ");
         String word = input.nextLine();
 
+        boolean isPalindrome = true;
+        for (int i = 0; i < word.length() / 2; i++) {
 
-
-        String reversed = "";
-
-
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed = reversed + word.charAt(i);
+            if (word.charAt(i) != word.charAt(word.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
         }
 
 
-        if (word.equals(reversed)) {
-            System.out.println("is it a palindrome? True");
-        } else {
-            System.out.println("is it a palindrome? False");
-        }
+        System.out.println("Is it a Palindrome? " + isPalindrome);
 
     }
 }
